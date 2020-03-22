@@ -1,5 +1,5 @@
-#This is Ceasor Encrpytion which encrpyts or decrypts the user text input to code by mention number of steps.
-#This is made by me.
+# This is Ceasor Encrpytion which encrpyts or decrypts the user text input to code by mention number of steps.
+# This is made by me.
 # Caeser Encryption
 
 def caeser_encryption():
