@@ -1,0 +1,87 @@
+#This is Ceasor Encrpytion which encrpyts or decrypts the user text input to code by mention number of steps.
+#This is made by me.
+# Caeser Encryption
+
+def caeser_encryption():
+    original_text = input("Enter a message to encrypt : ")
+    step = int(input("Enter number of steps : "))
+
+    cryptText = []
+    code = ""
+    
+    uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    numbers = [0,1,2,3,4,5,6,7,8,9]
+    special = [" ","!","@","$","#","%","&","(",")","-","+","=","_","[","]","|","/","{","}","'",".",",","?",">","<","^","*","`","~"]
+    
+    for eachLetter in original_text:
+        if eachLetter in uppercase:
+            index = uppercase.index(eachLetter)
+            crypting = (index + step) % 26
+            cryptText.append(crypting)
+            newLetter = uppercase[crypting]
+            code = code + newLetter
+        elif eachLetter in lowercase:
+            index = lowercase.index(eachLetter)
+            crypting = (index + step) % 26
+            cryptText.append(crypting)
+            newLetter = lowercase[crypting]
+            code = code + newLetter
+        elif eachLetter in special:
+            index = special.index(eachLetter)
+            crypting = (index + step) % 26
+            cryptText.append(crypting)
+            newLetter = special[crypting]
+            code = code + newLetter
+        elif eachLetter in numbers:
+            index = numbers.index(eachLetter)
+            crypting = (index + step) % 26
+            cryptText.append(crypting)
+            newLetter = number[crypting]
+            code = code + newLetter    
+    print("Encrypted :", code)
+
+    print()
+
+def caeser_decryption():
+    original_text = input("Enter a message to decrypt : ")
+    step = int(input("Enter number of steps : "))
+
+    cryptText = []
+    code = ""
+    
+    uppercase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    lowercase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    numbers = [0,1,2,3,4,5,6,7,8,9]
+    special = [" ","!","@","$","#","%","&","(",")","-","+","=","_","[","]","|","/","{","}","'",".",",","?",">","<","^","*","`","~"]
+    
+    for eachLetter in original_text:
+        if eachLetter in uppercase:
+            index = uppercase.index(eachLetter)
+            crypting = (index - step) % 26
+            cryptText.append(crypting)
+            newLetter = uppercase[crypting]
+            code = code + newLetter
+        elif eachLetter in lowercase:
+            index = lowercase.index(eachLetter)
+            crypting = (index - step) % 26
+            cryptText.append(crypting)
+            newLetter = lowercase[crypting]
+            code = code + newLetter
+        elif eachLetter in special:
+            index = special.index(eachLetter)
+            crypting = (index - step) % 26
+            cryptText.append(crypting)
+            newLetter = special[crypting]
+            code = code + newLetter
+        elif eachLetter in numbers:
+            index = numbers.index(eachLetter)
+            crypting = (index - step) % 26
+            cryptText.append(crypting)
+            newLetter = number[crypting]
+            code = code + newLetter    
+    print("Decrypted :", code)
+    
+caeser_encryption()
+
+caeser_decryption()
